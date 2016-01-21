@@ -1,0 +1,68 @@
+# Compiled source
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.7z
+*.dmg
+*.gz
+*.iso
+*.rar
+*.tar
+*.zip
+
+# Logs and databases
+*.log
+*.bak
+
+# OS generated files
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Gradle Files
+.gradle
+.gradletasknamecache
+.m2
+
+# Build output directies
+target/
+build/
+/*/build/
+gen-external-apklibs/
+
+# AndroidStudio specific files/directories
+local.properties
+
+# Android files
+*.apk
+*.ap_
+*.dex
+
+# IntelliJ specific files/directories
+out
+.idea
+*.ipr
+*.iws
+*.iml
+atlassian-ide-plugin.xml
+
+# Eclipse specific files/directories
+.classpath
+.project
+.settings
+.metadata
+proguard/
+bin/
+gen/
+
+# NetBeans specific files/directories
+.nbattrs
+/.nb-gradle/profiles/private/
+.nb-gradle-properties
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
