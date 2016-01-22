@@ -2,7 +2,7 @@
 
 A simple Android application written in Java, Groovy, Scala and Kotlin in order to find out what is the better language for Android development.
 
-## How to compare?
+## How to Compare?
 
 Only import the minimal dependencies.
 
@@ -47,5 +47,7 @@ Size Counter
 
 ## Conclusion
 
-So in my opinion, Kotlin may be a better way to write an Android Application.
+According the report, Kotlin may be a better way to write an Android Application.
+
+The future comparasion to be continue...
 
