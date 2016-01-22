@@ -45,9 +45,145 @@ Size Counter
 | Scala       |  over 65536 methods      | 1,190,188
 | Kotlin       |   1,602,041     | 697,290
 
+## Coding Comparison
+
+### Find View
+
+Java
+
+```java
+TextView title = (TextView)view.findViewById(android.R.id.text1);
+```
+
+Groovy
+
+```groovy
+def title = view.findViewById(android.R.id.text1) as TextView
+```
+
+Scala
+
+```scala
+val title = view.findViewById(android.R.id.text1).asInstanceOf[TextView]
+```
+
+Kotlin
+
+```kotlin
+val title = view.findViewById(android.R.id.text1) as TextView
+```
+
+### OnClickListener
+
+Java
+
+```java
+button.setOnClickListener(new View.OnClickListener() {
+    @Override
+    void onClick(final View v) {
+      //  do something
+    }
+})
+```
+
+Groovy
+
+```groovy
+button.onClickListener = {
+    //  do something
+}
+```
+
+Scala
+
+```scala
+button.onClick((v: View) =>
+    //  do something
+)
+```
+
+Kotlin
+
+```kotlin
+button.setOnClickListener {
+    //  do something
+}
+```
+
+### Callback
+
+Java
+
+```java
+public interface FindCallback {
+    void onFinish(List<String> results, Exception e);
+}
+private void findCountries(FindCallback doneCallback) {
+    try {
+        //  a long time mission
+        doneCallback.onFinish(results, null);
+    } catch (Exception e) {
+        doneCallback.onFinish(null, e);
+    }
+}
+findCountries(new FindCallback(){
+    void onFinish(List<String> results, Exception e){
+      //  handle result
+    }
+});
+```
+
+Groovy
+
+```groovy
+def findCountries(Closure doneCallback) {
+    try {
+        //  a long time mission
+        doneCallback(results, null)
+    } catch (e) {
+        doneCallback(null, e)
+    }
+}
+findCountries{ List<String> results, Exception e ->
+  //  handle result
+});
+```
+
+Scala
+
+```scala
+def findCountries(doneCallback: (ArrayBuffer[String], Exception) => Unit):Unit = {
+    try {
+        //  a long time mission
+        doneCallback(results, null)
+    } catch {
+        case e: Exception => doneCallback(null, e)
+    }
+}
+findCountries((names: ArrayBuffer[String], e: Exception) =>
+  //  handle result
+)
+```
+
+Kotlin
+
+```kotlin
+fun findCountries(doneCallback: (List<String>?, Exception?) -> Unit) {
+    try {
+        //  a long time mission
+        doneCallback(results, null)
+    } catch (e: Exception) {
+        doneCallback(null, e)
+    }
+}
+findCountries{ list, e ->
+  //  handle result
+}
+```
+
 ## Conclusion
 
 According the report, Kotlin may be a better way to write an Android Application.
 
-The future comparasion to be continue...
+The futher comparasion to be continue...
 
