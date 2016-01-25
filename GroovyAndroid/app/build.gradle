@@ -3,8 +3,8 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
-        classpath 'org.codehaus.groovy:gradle-groovy-android-plugin:0.3.6'
+        classpath 'com.android.tools.build:gradle:2.0.0-alpha7'
+        classpath 'org.codehaus.groovy:gradle-groovy-android-plugin:0.3.7'
     }
 }
 apply plugin: 'com.android.application'
@@ -73,3 +73,5 @@ project.androidGroovy {
         targetCompatibility = '1.7'
     }
 }
+
+apply from: 'timetracker.gradle'
