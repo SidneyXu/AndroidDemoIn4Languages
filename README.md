@@ -45,6 +45,15 @@ Size Counter
 | Scala       |  over 65536 methods      | 1,190,188
 | Kotlin       |   1,602,041     | 697,290
 
+Build Speed
+
+| Language | Gradle Plugin | Spend (secs) |
+|:--------:|:--------:|:--------:|
+| Java       |  2.0.0-alpha7      | ≈ 35
+| Groovy       |  2.0.0-alpha7      | > 120
+| Scala       |  1.3.1      | > 160
+| Kotlin       |   1.3.1     | ≈ 45
+
 ## Coding Comparison
 
 ### Find View
