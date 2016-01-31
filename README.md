@@ -187,9 +187,14 @@ findCountries{ list, e ->
 }
 ```
 
-## Conclusion
+## Community Support
 
-According the report, Kotlin may be a better way to write an Android Application.
+- Java Native Support
+- Groovy Official Support
+- Scala No Support
+- Kotlin Official Support
+
+## Conclusion
 
 The futher comparasion to be continue...
 
