@@ -1,3 +1,5 @@
+[中文版](https://github.com/SidneyXu/AndroidDemoIn4Languages/blob/master/README_CN.md)
+
 # AndroidDemoIn4Languages
 
 A simple Android application written in Java, Groovy, Scala and Kotlin in order to find out what is the better language for Android development.
