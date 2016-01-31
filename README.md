@@ -26,15 +26,12 @@ Only import the minimal dependencies.
 
 Line Counter
 
-```
--------------------------------------------------------------------------------
-Language                     files          blank        comment           code
--------------------------------------------------------------------------------
-Java                             3             22              0            165
-Groovy                           3             23              9            140
-Scala                            3             25              9            110
-Kotlin                           3             23              9            133
-```
+| Language | Files | Blank Lines | Comment Lines | Code Lines |
+|:--------:|:--------:|:--------:|:--------:|:--------:|
+| Java       |  3     |  22    |  0    |  165    |
+| Groovy       |  3    |  23     |  9     |  140     |
+| Scala       |  3     |  25    |  9     |  110     |
+| Kotlin       |  3    |  23    |  9     |  133    |
 
 Size Counter
 
