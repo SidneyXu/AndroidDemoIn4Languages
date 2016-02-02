@@ -6,7 +6,7 @@
 
 依存を最小限に利用する。
 
-## 依赖情况报告
+## 依存情報報告
 
 - Java
   - インポート `com.android.support:appcompat-v7:23.1.1`
