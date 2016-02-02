@@ -1,4 +1,5 @@
 [中文版](https://github.com/SidneyXu/AndroidDemoIn4Languages/blob/master/README_CN.md)
+[日本版](https://github.com/SidneyXu/AndroidDemoIn4Languages/blob/master/README_JP.md)
 
 # AndroidDemoIn4Languages
 
