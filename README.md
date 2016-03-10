@@ -54,6 +54,15 @@ Build Speed
 | Scala       |  1.3.1      | > 160
 | Kotlin       |   1.3.1     | ≈ 45
 
+Method Counter
+
+| Language |Disable Proguard (bytes) | Enable Proguard (bytes) |
+|:--------:|:--------:|:--------:|
+| Java       |  164,60 | 6,421
+| Groovy       |  46,055 | 23,112
+| Scala       |  over 65536 methods | 19,388
+| Kotlin       |   24,061 |  6,559
+
 ## Coding Comparison
 
 ### Find View
