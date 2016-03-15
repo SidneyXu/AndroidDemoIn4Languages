@@ -56,7 +56,7 @@ Build Speed
 
 Method Counter
 
-| Language |Disable Proguard (bytes) | Enable Proguard (bytes) |
+| Language |Disable Proguard | Enable Proguard |
 |:--------:|:--------:|:--------:|
 | Java       |  164,60 | 6,421
 | Groovy       |  46,055 | 23,112
