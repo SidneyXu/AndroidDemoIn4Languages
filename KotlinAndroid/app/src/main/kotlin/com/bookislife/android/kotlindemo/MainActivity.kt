@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 /**
  * Created by SidneyXu on 2016/01/21.
  */
-public class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +24,7 @@ public class MainActivity : AppCompatActivity() {
         }
     }
 
-    inline public fun <reified T : Activity> Activity.navigate(bundle: Bundle? = null) {
+    inline fun <reified T : Activity> Activity.navigate(bundle: Bundle? = null) {
         val intent = Intent(this, T::class.java)
         if (bundle != null) {
             intent.putExtras(bundle)

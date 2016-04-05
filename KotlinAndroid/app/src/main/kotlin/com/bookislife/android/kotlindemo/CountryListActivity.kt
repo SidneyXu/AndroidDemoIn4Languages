@@ -9,12 +9,13 @@ import android.widget.ListView
 import android.widget.Toast
 import org.json.JSONArray
 import java.net.URL
+import java.nio.charset.Charset
 import java.util.concurrent.Executors
 
 /**
  * Created by SidneyXu on 2016/01/21.
  */
-public class CountryListActivity : AppCompatActivity() {
+class CountryListActivity : AppCompatActivity() {
 
     val service = Executors.newSingleThreadExecutor()
 
@@ -47,10 +48,10 @@ public class CountryListActivity : AppCompatActivity() {
         service.execute {
             try {
                 URL("https://restcountries.eu/rest/v1/all").openStream().use {
-                    it.bufferedReader("UTF-8").use {
+                    it.bufferedReader(Charset.forName("UTF-8")).use {
                         val countries = it.readText()
                         val json = JSONArray(countries)
-                        val names = linkedListOf<String>()
+                        val names = arrayListOf<String>()
 
                         val length = json.length()
                         var i = 0

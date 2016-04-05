@@ -10,7 +10,7 @@ import android.widget.TextView
 /**
  * Created by SidneyXu on 2016/01/21.
  */
-public class Apt(val ctx: Context, var data: List<String>) : ArrayAdapter<String>(
+class Apt(val ctx: Context, var data: List<String>) : ArrayAdapter<String>(
         ctx,
         R.layout.simple_list_item_1,
         R.id.text1,
