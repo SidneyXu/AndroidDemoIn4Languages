@@ -3,12 +3,13 @@ package com.bookislife.android.scalademo
 import java.util.concurrent.Executors
 
 import android.app.ProgressDialog
+import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.{AdapterView, ListView}
+import android.widget.AdapterView.OnItemClickListener
+import android.widget.{AdapterView, ListView, Toast}
 import org.json.JSONArray
-import org.scaloid.common.{SActivity, _}
 
 import scala.collection.mutable.ArrayBuffer
 import scala.concurrent.{ExecutionContext, Future}
@@ -17,7 +18,7 @@ import scala.io.Source
 /**
   * Created by SidneyXu on 2016/01/20.
   */
-class CountryListActivity extends AppCompatActivity with SActivity {
+class CountryListActivity extends AppCompatActivity {
 
   implicit val service = ExecutionContext.fromExecutor(Executors.newSingleThreadExecutor())
 
@@ -26,25 +27,30 @@ class CountryListActivity extends AppCompatActivity with SActivity {
     val listView = new ListView(this)
     setContentView(listView)
 
-    val progressDialog = new ProgressDialog(this)
-    progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER)
-    progressDialog.setCancelable(false)
+    import AndroidContext._
+
+    val progressDialog = this.progress()
     progressDialog.show()
 
     findCountries((names: ArrayBuffer[String], e: Exception) =>
 
-      runOnUiThread {
-        progressDialog.dismiss()
-        if (e != null) {
-          toast(e.getMessage)
-          return
+      runOnUiThread(new Runnable {
+        override def run(): Unit = {
+          progressDialog.dismiss()
+          if (e != null) {
+            CountryListActivity.this.toast(e.getMessage)
+            return
+          }
+          val apt = new Apt(CountryListActivity.this, names)
+          listView.setAdapter(apt)
+          listView.setOnItemClickListener(new OnItemClickListener {
+            override def onItemClick(parent: AdapterView[_], view: View, position: Int, id: Long): Unit = {
+              CountryListActivity.this.toast(names(position))
+            }
+          })
+
         }
-        val apt = new Apt(CountryListActivity.this, names)
-        listView.setAdapter(apt)
-        listView.onItemClick { (parent: AdapterView[_], view: View, position: Int, id: Long) =>
-          toast(names(position))
-        }
-      }
+      })
     )
   }
 
@@ -65,6 +71,21 @@ class CountryListActivity extends AppCompatActivity with SActivity {
         case e: Exception => callback(null, e)
       }
     }
+  }
+
+  object AndroidContext {
+
+    implicit class RichContext(ctx: Context) {
+      def toast(msg: String) = Toast.makeText(ctx, msg, Toast.LENGTH_SHORT).show()
+
+      def progress(): ProgressDialog = {
+        val progressDialog = new ProgressDialog(ctx)
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER)
+        progressDialog.setCancelable(false)
+        progressDialog
+      }
+    }
+
   }
 
 }

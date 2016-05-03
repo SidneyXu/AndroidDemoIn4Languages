@@ -58,7 +58,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile "org.scala-lang:scala-library:2.11.7"
-    compile "org.scaloid:scaloid_2.11:4.0"
+//    compile "org.scaloid:scaloid_2.11:4.0"
 }
 
 apply from: 'timetracker.gradle'

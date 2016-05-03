@@ -1,23 +1,26 @@
 package com.bookislife.android.scalademo
 
+
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View.OnClickListener
 import android.view.{Menu, MenuItem, View}
-import android.widget.Button
-import org.scaloid.common._
 
 /**
   * Created by SidneyXu on 2016/01/20.
   */
-class MainActivity extends AppCompatActivity with SActivity {
+class MainActivity extends AppCompatActivity {
 
   protected override def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
-    find[Button](android.R.id.button1).onClick((v: View) =>
-      startActivity[CountryListActivity]
-    )
+    findViewById(android.R.id.button1).setOnClickListener(new OnClickListener {
+      override def onClick(v: View): Unit = {
+        startActivity(new Intent(MainActivity.this, classOf[CountryListActivity]))
+      }
+    })
   }
 
   override def onCreateOptionsMenu(menu: Menu): Boolean = {
