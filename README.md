@@ -87,6 +87,14 @@ val title = view.findViewById(android.R.id.text1).asInstanceOf[TextView]
 
 Kotlin
 
+With [Kotlin Android Extensions](https://kotlinlang.org/docs/tutorials/android-plugin.html) enabled (no extra dependencies needed):
+
+``` kotlin
+val title = view.text1
+```
+
+Note: as a fallback, one can use the more traditional cast-based approach:
+
 ```kotlin
 val title = view.findViewById(android.R.id.text1) as TextView
 ```
