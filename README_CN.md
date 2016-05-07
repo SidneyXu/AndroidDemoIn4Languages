@@ -9,18 +9,17 @@
 ## 依赖情况报告
 
 - Java
-  - 导入 `com.android.support:appcompat-v7:23.1.1`
+  - 导入 `com.android.support:appcompat-v7:23.3.0`
 - Groovy
-  - 导入 `com.android.support:appcompat-v7:23.1.1`
-  - 导入 `org.codehaus.groovy:groovy:2.4.5:grooid`
-  - 导入 `org.codehaus.groovy:groovy-json:2.4.5`
+  - 导入 `com.android.support:appcompat-v7:23.3.0`
+  - 导入 `org.codehaus.groovy:groovy:2.4.6:grooid`
+  - 导入 `org.codehaus.groovy:groovy-json:2.4.6`
 - Scala
-  - 导入 `com.android.support:appcompat-v7:23.1.1`
+  - 导入 `com.android.support:appcompat-v7:23.3.0`
   - 导入 `org.scala-lang:scala-library:2.11.7`
-  - 导入 `org.scaloid:scaloid_2.11:4.0`
 - Kotlin
-  - 导入 `com.android.support:appcompat-v7:23.1.1`
-  - 导入 `org.jetbrains.kotlin:kotlin-stdlib:1.0.0-beta-4584`
+  - 导入 `com.android.support:appcompat-v7:23.3.0`
+  - 导入 `org.jetbrains.kotlin:kotlin-stdlib:1.0.0`
 
 ## 分析报告
 
@@ -28,37 +27,43 @@
 
 | 语言 | 文件数 | 空行数 | 注释行数 | 代码行数 |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| Java       |  3     |  22    |  0    |  165    |
+| Java       |  3     |  20    |  0    |  157    |
 | Groovy       |  3    |  23     |  9     |  140     |
-| Scala       |  3     |  25    |  9     |  110     |
-| Kotlin       |  3    |  23    |  9     |  133    |
+| Scala       |  3     |  32    |  9     |  127     |
+| Kotlin       |  3    |  23    |  9     |  136    |
 
 大小统计
 
 | 语言 | 不使用 Proguard (字节) |  使用 Proguard (字节) |
 |:--------:|:--------:|:--------:|
-| Java       |  1,220,887      | 654,906
-| Groovy       |  2,934,236      | 1,674,177
-| Scala       |  over 65536 methods      | 1,190,188
-| Kotlin       |   1,602,041     | 697,290
-
-编译速度
-
-| 语言 | Gradle Plugin 版本 | 耗时 (秒) |
-|:--------:|:--------:|:--------:|
-| Java       |  2.0.0-alpha7      | ≈ 35
-| Groovy       |  2.0.0-alpha7      | > 120
-| Scala       |  1.3.1      | > 160
-| Kotlin       |   1.3.1     | ≈ 45
+| Java       |  1,228,376      | 772,571
+| Groovy       |  3,003,235      | 1,759,722
+| Scala       |  超过 65536 方法      | 1,026,688
+| Kotlin       |   1,595,108     | 778,629
 
 方法数量
 
 | 语言 | 不使用 Proguard |  使用 Proguard |
 |:--------:|:--------:|:--------:|
-| Java       |  164,60 | 6,421
-| Groovy       |  46,055 | 23,112
-| Scala       |  over 65536 methods | 19,388
-| Kotlin       |   24,061 |  6,559
+| Java       |  163,06 | 7,065
+| Groovy       |  46,791 | 23,775
+| Scala       |  over 65536 methods | 12,180
+| Kotlin       |   23,236 |  7,193
+
+编译速度
+
+使用 MacBook Pro (Retina, 15-inch, Mid 2014 & APPLE SSD SM0256F Media) 进行测试
+
+Gradle 测试命令: `./gradlew :app:clean :app:assembleDebug`
+SBT 测试命令: `sbt app/clean app/android:package`
+
+
+| 语言 | Gradle Plugin 版本 | 耗时 (秒) | SBT | 耗时 (秒)
+|:--------:|:--------:|:--------:|:--------:|:--------:|
+| Java       |  2.1.0-rc1      | ≈ 7	| 0.13.11 | ≈ 9
+| Groovy       |  1.5.0      | ≈ 21 | 0.13.11 | -
+| Scala       |  1.3.1      | ≈ 23 | 0.13.11 | ≈ 21
+| Kotlin       |   2.1.0-rc1      | ≈ 8 | 0.13.11 | ≈ 16
 
 ## 代码对比
 
@@ -83,6 +88,14 @@ val title = view.findViewById(android.R.id.text1).asInstanceOf[TextView]
 ```
 
 Kotlin
+
+使用 [Kotlin Android Extensions](https://kotlinlang.org/docs/tutorials/android-plugin.html) (无需添加依赖)
+
+``` kotlin
+val title = view.text1
+```
+
+注意：也可以使用以下传统形式
 
 ```kotlin
 val title = view.findViewById(android.R.id.text1) as TextView
