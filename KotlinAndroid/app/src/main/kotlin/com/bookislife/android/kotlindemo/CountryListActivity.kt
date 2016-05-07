@@ -23,9 +23,8 @@ class CountryListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val listView = ListView(this)
         setContentView(listView)
-        val progressDialog = ProgressDialog(this)
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER)
-        progressDialog.setCancelable(false)
+
+        val progressDialog = progress()
         progressDialog.show()
 
         findCountries { list, e ->
@@ -70,8 +69,13 @@ class CountryListActivity : AppCompatActivity() {
         }
     }
 
-    public fun Activity.toast(message: CharSequence?, duration: Int = Toast.LENGTH_SHORT) {
+    fun Activity.toast(message: CharSequence?, duration: Int = Toast.LENGTH_SHORT) {
         Toast.makeText(this, message, duration).show()
+    }
+
+    fun Activity.progress() = ProgressDialog(this).apply {
+        setProgressStyle(ProgressDialog.STYLE_SPINNER)
+        setCancelable(false)
     }
 
     override fun onDestroy() {

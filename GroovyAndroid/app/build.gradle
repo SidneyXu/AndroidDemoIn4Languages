@@ -3,8 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.0.0-alpha7'
-        classpath 'org.codehaus.groovy:gradle-groovy-android-plugin:0.3.7'
+        classpath 'org.codehaus.groovy:gradle-groovy-android-plugin:0.3.10'
     }
 }
 apply plugin: 'com.android.application'
@@ -16,11 +15,11 @@ repositories {
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "com.bookislife.android.groovydemo"
-        minSdkVersion 9
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -31,12 +30,12 @@ android {
         targetCompatibility JavaVersion.VERSION_1_7
     }
     buildTypes {
-        release {
+        debug {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        debug {
-            minifyEnabled false
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -55,10 +54,10 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'org.codehaus.groovy:groovy:2.4.5:grooid'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'org.codehaus.groovy:groovy:2.4.6:grooid'
     //  necessary when using groovy json api
-    compile('org.codehaus.groovy:groovy-json:2.4.5') {
+    compile('org.codehaus.groovy:groovy-json:2.4.6') {
         transitive = false
     }
 }

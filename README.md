@@ -1,5 +1,5 @@
 [中文版](https://github.com/SidneyXu/AndroidDemoIn4Languages/blob/master/README_CN.md)
-[日本版](https://github.com/SidneyXu/AndroidDemoIn4Languages/blob/master/README_JP.md)
+[日本語](https://github.com/SidneyXu/AndroidDemoIn4Languages/blob/master/README_JP.md)
 
 # AndroidDemoIn4Languages
 
@@ -12,18 +12,17 @@ Only import the minimal dependencies.
 ## Dependence Report
 
 - In Java
-  - Import `com.android.support:appcompat-v7:23.1.1`
+  - Import `com.android.support:appcompat-v7:23.3.0`
 - In Groovy
-  - Import `com.android.support:appcompat-v7:23.1.1`
-  - Import `org.codehaus.groovy:groovy:2.4.5:grooid`
-  - Import `org.codehaus.groovy:groovy-json:2.4.5`
+  - Import `com.android.support:appcompat-v7:23.3.0`
+  - Import `org.codehaus.groovy:groovy:2.4.6:grooid`
+  - Import `org.codehaus.groovy:groovy-json:2.4.6`
 - In Scala
-  - Import `com.android.support:appcompat-v7:23.1.1`
+  - Import `com.android.support:appcompat-v7:23.3.0`
   - Import `org.scala-lang:scala-library:2.11.7`
-  - Import `org.scaloid:scaloid_2.11:4.0`
 - In Kotlin
-  - Import `com.android.support:appcompat-v7:23.1.1`
-  - Import `org.jetbrains.kotlin:kotlin-stdlib:1.0.0-beta-4584`
+  - Import `com.android.support:appcompat-v7:23.3.0`
+  - Import `org.jetbrains.kotlin:kotlin-stdlib:1.0.0`
 
 ## Analysis Report
 
@@ -31,37 +30,43 @@ Line Counter
 
 | Language | Files | Blank Lines | Comment Lines | Code Lines |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| Java       |  3     |  22    |  0    |  165    |
+| Java       |  3     |  20    |  0    |  157    |
 | Groovy       |  3    |  23     |  9     |  140     |
-| Scala       |  3     |  25    |  9     |  110     |
-| Kotlin       |  3    |  23    |  9     |  133    |
+| Scala       |  3     |  32    |  9     |  127     |
+| Kotlin       |  3    |  23    |  9     |  136    |
 
 Size Counter
 
 | Language | Disable Proguard (bytes) | Enable Proguard (bytes) |
 |:--------:|:--------:|:--------:|
-| Java       |  1,220,887      | 654,906
-| Groovy       |  2,934,236      | 1,674,177
-| Scala       |  over 65536 methods      | 1,190,188
-| Kotlin       |   1,602,041     | 697,290
-
-Build Speed
-
-| Language | Gradle Plugin | Spend (secs) |
-|:--------:|:--------:|:--------:|
-| Java       |  2.0.0-alpha7      | ≈ 35
-| Groovy       |  2.0.0-alpha7      | > 120
-| Scala       |  1.3.1      | > 160
-| Kotlin       |   1.3.1     | ≈ 45
+| Java       |  1,228,376      | 772,571
+| Groovy       |  3,003,235      | 1,759,722
+| Scala       |  over 65536 methods      | 1,026,688
+| Kotlin       |   1,595,108     | 778,629
 
 Method Counter
 
 | Language |Disable Proguard | Enable Proguard |
 |:--------:|:--------:|:--------:|
-| Java       |  164,60 | 6,421
-| Groovy       |  46,055 | 23,112
-| Scala       |  over 65536 methods | 19,388
-| Kotlin       |   24,061 |  6,559
+| Java       |  163,06 | 7,065
+| Groovy       |  46,791 | 23,775
+| Scala       |  over 65536 methods | 12,180
+| Kotlin       |   23,236 |  7,193
+
+Build Speed
+
+Test on MacBook Pro (Retina, 15-inch, Mid 2014 & APPLE SSD SM0256F Media)
+
+Gradle task: `./gradlew :app:clean :app:assembleDebug`
+SBT task: `sbt app/clean app/android:package`
+
+| Language | Gradle Plugin | Spend (secs) | SBT | Spend (secs)
+|:--------:|:--------:|:--------:|:--------:|:--------:|
+| Java       |  2.1.0-rc1      | ≈ 7	| 0.13.11 | ≈ 9
+| Groovy       |  1.5.0      | ≈ 21 | 0.13.11 | -
+| Scala       |  1.3.1      | ≈ 23 | 0.13.11 | ≈ 21
+| Kotlin       |   2.1.0-rc1      | ≈ 8 | 0.13.11 | ≈ 16
+
 
 ## Coding Comparison
 

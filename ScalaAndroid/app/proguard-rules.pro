@@ -24,6 +24,3 @@
 -keep class scala.collection.SeqLike {
     public protected *;
 }
-
-# this can be omitted if current Android Build target is android-16
--dontwarn org.scaloid.**
