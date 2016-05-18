@@ -19,7 +19,7 @@
   - インポート `org.scala-lang:scala-library:2.11.7`
 - Kotlin
   - インポート `com.android.support:appcompat-v7:23.3.0`
-  - インポート `org.jetbrains.kotlin:kotlin-stdlib:1.0.0`
+  - インポート `org.jetbrains.kotlin:kotlin-stdlib:1.0.2`
 
 ## 分析報告
 
@@ -48,7 +48,7 @@
 | Java       |  163,06 | 7,065
 | Groovy       |  46,791 | 23,775
 | Scala       |  over 65536 methods | 12,180
-| Kotlin       |   23,236 |  7,193
+| Kotlin       |   23,236 |  7,198
 
 コンパイルスピード
 
@@ -218,4 +218,4 @@ findCountries{ list, e ->
 
 ## 結論
 
-もっと比較を続く。。。
+続く。。。
