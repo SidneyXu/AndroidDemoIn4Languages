@@ -25,7 +25,7 @@ class Apt(val ctx: Context, var data: List<String>) : ArrayAdapter<String>(
             holder.title = view.findViewById(R.id.text1) as TextView
             view.tag = holder
         } else {
-            holder = view?.tag as Holder
+            holder = convertView.tag as Holder
             view = convertView
         }
         holder.title?.text = getItem(position)
