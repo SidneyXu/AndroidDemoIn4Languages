@@ -5,6 +5,10 @@
 
 A simple Android application written in Java, Groovy, Scala and Kotlin in order to find out what is the better language for Android development.
 
+## ChangeLog
+
+- 2016.5.19 Update Kotlin from v1.0.0 to v1.0.2
+
 ## How to Compare?
 
 Only import the minimal dependencies.
@@ -29,11 +33,11 @@ Only import the minimal dependencies.
 Line Counter
 
 | Language | Files | Blank Lines | Comment Lines | Code Lines |
-|:--------:|:--------:|:--------:|:--------:|:--------:|
-| Java       |  3     |  20    |  0    |  157    |
-| Groovy       |  3    |  23     |  9     |  140     |
-| Scala       |  3     |  32    |  9     |  127     |
-| Kotlin       |  3    |  23    |  9     |  136    |
+| :------: | :---: | :---------: | :-----------: | :--------: |
+|   Java   |   3   |     20      |       0       |    157     |
+|  Groovy  |   3   |     23      |       9       |    140     |
+|  Scala   |   3   |     32      |       9       |    127     |
+|  Kotlin  |   3   |     23      |       9       |    136     |
 
 Size Counter
 
@@ -42,7 +46,7 @@ Size Counter
 | Java       |  1,228,376      | 772,571
 | Groovy       |  3,003,235      | 1,759,722
 | Scala       |  over 65536 methods      | 1,026,688
-| Kotlin       |   1,595,108     | 778,629
+| Kotlin       |   1,525,725     | 736,843
 
 Method Counter
 
@@ -51,7 +55,15 @@ Method Counter
 | Java       |  163,06 | 7,065
 | Groovy       |  46,791 | 23,775
 | Scala       |  over 65536 methods | 12,180
-| Kotlin       |   23,236 |  7,198
+| Kotlin       |   21,776 |  7,198
+
+>Notice  
+>Update Kotlin version  
+>v1.0.0 -> v1.0.2  
+>method 23236 -> 21776  
+>method(proguard) 7124 -> 7198  
+>size 1,594,619 -> 1,525,725  
+>size(proguard) 776.281 -> 736,843  
 
 Build Speed
 
@@ -62,7 +74,7 @@ SBT task: `sbt app/clean app/android:package`
 
 | Language | Gradle Plugin | Spend (secs) | SBT | Spend (secs)
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| Java       |  2.1.0-rc1      | ≈ 7	| 0.13.11 | ≈ 9
+| Java       |  2.1.0-rc1      | ≈ 7    | 0.13.11 | ≈ 9
 | Groovy       |  1.5.0      | ≈ 21 | 0.13.11 | -
 | Scala       |  1.3.1      | ≈ 23 | 0.13.11 | ≈ 21
 | Kotlin       |   2.1.0-rc1      | ≈ 8 | 0.13.11 | ≈ 16
@@ -212,6 +224,135 @@ findCountries{ list, e ->
 }
 ```
 
+### Extension
+
+Scala
+
+```scala
+object AndroidContext {
+
+  implicit class RichContext(ctx: Context) {
+    def toast(msg: String) = Toast.makeText(ctx, msg, Toast.LENGTH_SHORT).show()
+
+    def progress(): ProgressDialog = {
+      val progressDialog = new ProgressDialog(ctx)
+      progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER)
+      progressDialog.setCancelable(false)
+      progressDialog
+    }
+  }
+
+}
+
+import AndroidContext._
+this.toast(msg)
+this.progress().show()
+```
+
+
+
+Kotlin
+
+```kotlin
+fun Activity.toast(message: CharSequence?, duration: Int = Toast.LENGTH_SHORT) {
+    Toast.makeText(this, message, duration).show()
+}
+
+fun Activity.progress() = ProgressDialog(this).apply {
+    setProgressStyle(ProgressDialog.STYLE_SPINNER)
+    setCancelable(false)
+}
+```
+
+### Switch
+
+Java
+
+```java
+String result;
+switch (obj) {
+    case 1:
+        result = "Result is 1";
+        break;
+    case 10:
+        result = "Result is 10";
+        break;
+    default:
+        result = "Default result";
+        break;
+}
+```
+
+Groovy
+
+```groovy
+def result
+switch (obj) {
+    case 0:
+        result = "Object equals"
+        break
+    case 11..20:
+        result = "Range contains"
+        break
+    case [1, 2, 3]:
+        result = "List contains"
+        break
+    case Float:
+        result = "Class instance"
+        break
+    case { it % 3 == 0 }:
+        result = "Closure"
+        break
+    case ~'[0-9]{3}':
+        result = "Pattern match"
+        break
+    default:
+        result = "Default"
+        break
+}
+```
+
+Scala
+
+```scala
+val result = foo match {
+  case 0 => "Object equals"
+  case i if i == 10 || i == 11 => "Expression"
+  case i: Int => s"Class instance holds $i"
+  case List(1, 2, _*) => "List contains"
+  case Number(n) => s"Case class holds $n"
+  case t: {def length: Int} => "Duck type"
+  case _ => "Default"
+}
+```
+
+Kotlin
+
+```kotlin
+var result = when (foo) {
+    0 -> "Object equals"
+    3, 10 -> "Or"
+    in 11..20 -> "Range contains"
+    is Date -> "Class instance"
+    !in 4..30 -> "Range not contain"
+    else -> "Default"
+}
+```
+
+## 3rd Party Libraries
+
+Scala
+
+- [Scaloid](https://github.com/pocorall/scaloid)
+
+Kotlin
+
+- [Anko](https://github.com/Kotlin/anko)
+
+## Who use these languages?
+
+TODO
+
 ## Community Support
 
 - Java Native Support
@@ -221,5 +362,5 @@ findCountries{ list, e ->
 
 ## Conclusion
 
-The futher comparasion to be continue...
+The futher comparison to be continue...
 
