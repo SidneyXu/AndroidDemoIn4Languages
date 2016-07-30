@@ -7,7 +7,8 @@ A simple Android application written in Java, Groovy, Scala and Kotlin in order 
 
 ## ChangeLog
 
-- 2016.5.19 Update Kotlin from v1.0.0 to v1.0.2
+- 2016-07-30 Update Scala, SBT, sbt-android versions
+- 2016-05-19 Update Kotlin from v1.0.0 to v1.0.2
 
 ## How to Compare?
 
@@ -42,20 +43,20 @@ Line Counter
 Size Counter
 
 | Language | Disable Proguard (bytes) | Enable Proguard (bytes) |
-|:--------:|:--------:|:--------:|
-| Java       |  1,228,376      | 772,571
-| Groovy       |  3,003,235      | 1,759,722
-| Scala       |  over 65536 methods      | 1,026,688
-| Kotlin       |   1,525,725     | 736,843
+|:--------:|-------------------------:|------------------------:|
+| Java     |                1,228,376 |                 772,571 |
+| Groovy   |                3,003,235 |               1,759,722 |
+| Scala    |                3,277,007 |               1,008,929 |
+| Kotlin   |                1,525,725 |                 736,843 |
 
 Method Counter
 
-| Language |Disable Proguard | Enable Proguard |
-|:--------:|:--------:|:--------:|
-| Java       |  163,06 | 7,065
-| Groovy       |  46,791 | 23,775
-| Scala       |  over 65536 methods | 12,180
-| Kotlin       |   21,776 |  7,198
+| Language | Disable Proguard | Enable Proguard |
+|:--------:|-----------------:|----------------:|
+| Java     |           16,306 |           7,065 |
+| Groovy   |           46,791 |          23,775 |
+| Scala    |           67,608 |          11,671 |
+| Kotlin   |           21,776 |           7,198 |
 
 >Notice  
 >Update Kotlin version  
@@ -72,12 +73,12 @@ Test on MacBook Pro (Retina, 15-inch, Mid 2014 & APPLE SSD SM0256F Media)
 Gradle task: `./gradlew :app:clean :app:assembleDebug`
 SBT task: `sbt app/clean app/android:package`
 
-| Language | Gradle Plugin | Spend (secs) | SBT | Spend (secs)
-|:--------:|:--------:|:--------:|:--------:|:--------:|
-| Java       |  2.1.0-rc1      | ≈ 7    | 0.13.11 | ≈ 9
-| Groovy       |  1.5.0      | ≈ 21 | 0.13.11 | -
-| Scala       |  1.3.1      | ≈ 23 | 0.13.11 | ≈ 21
-| Kotlin       |   2.1.0-rc1      | ≈ 8 | 0.13.11 | ≈ 16
+| Language | Gradle Plugin | Time (secs) | SBT      | Time (secs) |
+|:--------:|:-------------:|------------:|:--------:|------------:|
+| Java     |  2.1.0-rc1    |         ≈ 7 |  0.13.12 |         ≈ 9 |
+| Groovy   |  1.5.0        |        ≈ 21 |  0.13.12 |           - |
+| Scala    |  1.3.1        |        ≈ 23 |  0.13.12 |        ≈ 17 |
+| Kotlin   |  2.1.0-rc1    |         ≈ 8 |  0.13.12 |        ≈ 16 |
 
 
 ## Coding Comparison
@@ -363,4 +364,3 @@ TODO
 ## Conclusion
 
 The futher comparison to be continue...
-
