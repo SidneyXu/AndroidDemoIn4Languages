@@ -7,6 +7,7 @@ A simple Android application written in Java, Groovy, Scala and Kotlin in order 
 
 ## ChangeLog
 
+- 2017-03-30 Update versions: Android Sdk -> v25,  Gradle Plugin -> v2.2.0, Kotlin -> v1.1.1, Groovy -> 2.4.10
 - 2016-07-30 Update Scala, SBT, sbt-android versions
 - 2016-05-19 Update Kotlin from v1.0.0 to v1.0.2
 
@@ -17,17 +18,17 @@ Only import the minimal dependencies.
 ## Dependence Report
 
 - In Java
-  - Import `com.android.support:appcompat-v7:23.3.0`
+  - Import `com.android.support:appcompat-v7:25.2.0`
 - In Groovy
-  - Import `com.android.support:appcompat-v7:23.3.0`
-  - Import `org.codehaus.groovy:groovy:2.4.6:grooid`
-  - Import `org.codehaus.groovy:groovy-json:2.4.6`
+  - Import `com.android.support:appcompat-v7:25.2.0`
+  - Import `org.codehaus.groovy:groovy:2.4.10:grooid`
+  - Import `org.codehaus.groovy:groovy-json:2.4.10`
 - In Scala
-  - Import `com.android.support:appcompat-v7:23.3.0`
-  - Import `org.scala-lang:scala-library:2.11.7`
+  - Import `com.android.support:appcompat-v7:25.2.0`
+  - Import `org.scala-lang:scala-library:2.11.8`
 - In Kotlin
-  - Import `com.android.support:appcompat-v7:23.3.0`
-  - Import `org.jetbrains.kotlin:kotlin-stdlib:1.0.2`
+  - Import `com.android.support:appcompat-v7:25.2.0`
+  - Import `org.jetbrains.kotlin:kotlin-stdlib:1.1.1`
 
 ## Analysis Report
 
@@ -35,7 +36,7 @@ Line Counter
 
 | Language | Files | Blank Lines | Comment Lines | Code Lines |
 | :------: | :---: | :---------: | :-----------: | :--------: |
-|   Java   |   3   |     20      |       0       |    157     |
+|   Java   |   3   |     20      |       9       |    157     |
 |  Groovy  |   3   |     23      |       9       |    140     |
 |  Scala   |   3   |     32      |       9       |    127     |
 |  Kotlin  |   3   |     23      |       9       |    136     |
@@ -43,28 +44,20 @@ Line Counter
 Size Counter
 
 | Language | Disable Proguard (bytes) | Enable Proguard (bytes) |
-|:--------:|-------------------------:|------------------------:|
-| Java     |                1,228,376 |                 772,571 |
-| Groovy   |                3,003,235 |               1,759,722 |
-| Scala    |                3,277,007 |               1,008,929 |
-| Kotlin   |                1,525,725 |                 736,843 |
+| :------: | :----------------------: | :---------------------: |
+|   Java   |        1,438,673         |         893,137         |
+|  Groovy  |        3,395,936         |        1,982,125        |
+|  Scala   |        3,277,007         |        1,349,352        |
+|  Kotlin  |        1,833,258         |         903,566         |
 
 Method Counter
 
 | Language | Disable Proguard | Enable Proguard |
-|:--------:|-----------------:|----------------:|
-| Java     |           16,306 |           7,065 |
-| Groovy   |           46,791 |          23,775 |
-| Scala    |           67,608 |          11,671 |
-| Kotlin   |           21,776 |           7,198 |
-
->Notice  
->Update Kotlin version  
->v1.0.0 -> v1.0.2  
->method 23236 -> 21776  
->method(proguard) 7124 -> 7198  
->size 1,594,619 -> 1,525,725  
->size(proguard) 776.281 -> 736,843  
+| :------: | :--------------: | :-------------: |
+|   Java   |      17,416      |      7,608      |
+|  Groovy  |      47,982      |     24,379      |
+|  Scala   |      67,608      |     20,109      |
+|  Kotlin  |      23,587      |      7,656      |
 
 Build Speed
 
@@ -73,12 +66,12 @@ Test on MacBook Pro (Retina, 15-inch, Mid 2014 & APPLE SSD SM0256F Media)
 Gradle task: `./gradlew :app:clean :app:assembleDebug`
 SBT task: `sbt app/clean app/android:package`
 
-| Language | Gradle Plugin | Time (secs) | SBT      | Time (secs) |
-|:--------:|:-------------:|------------:|:--------:|------------:|
-| Java     |  2.1.0-rc1    |         ≈ 7 |  0.13.12 |         ≈ 9 |
-| Groovy   |  1.5.0        |        ≈ 21 |  0.13.12 |           - |
-| Scala    |  1.3.1        |        ≈ 23 |  0.13.12 |        ≈ 17 |
-| Kotlin   |  2.1.0-rc1    |         ≈ 8 |  0.13.12 |        ≈ 16 |
+| Language | Gradle Plugin | Time (secs) |   SBT   | Time (secs) |
+| :------: | :-----------: | :---------: | :-----: | :---------: |
+|   Java   |     2.2.0     |     ≈ 8     | 0.13.12 |    ≈ 10     |
+|  Groovy  |     2.2.0     |    ≈ 20     | 0.13.12 |      -      |
+|  Scala   |     1.3.1     |    ≈ 28     | 0.13.12 |    ≈ 17     |
+|  Kotlin  |     2.2.0     |     ≈ 9     | 0.13.12 |    ≈ 20     |
 
 
 ## Coding Comparison

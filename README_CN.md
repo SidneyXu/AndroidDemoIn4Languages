@@ -9,46 +9,46 @@
 ## 依赖情况报告
 
 - Java
-  - 导入 `com.android.support:appcompat-v7:23.3.0`
+  - 导入 `com.android.support:appcompat-v7:25.2.0`
 - Groovy
-  - 导入 `com.android.support:appcompat-v7:23.3.0`
-  - 导入 `org.codehaus.groovy:groovy:2.4.6:grooid`
-  - 导入 `org.codehaus.groovy:groovy-json:2.4.6`
+  - 导入 `com.android.support:appcompat-v7:25.2.0`
+  - 导入 `org.codehaus.groovy:groovy:2.4.10:grooid`
+  - 导入 `org.codehaus.groovy:groovy-json:2.4.10`
 - Scala
-  - 导入 `com.android.support:appcompat-v7:23.3.0`
-  - 导入 `org.scala-lang:scala-library:2.11.7`
+  - 导入 `com.android.support:appcompat-v7:25.2.0`
+  - 导入 `org.scala-lang:scala-library:2.11.8`
 - Kotlin
-  - 导入 `com.android.support:appcompat-v7:23.3.0`
-  - 导入 `org.jetbrains.kotlin:kotlin-stdlib:1.0.2`
+  - 导入 `com.android.support:appcompat-v7:25.2.0`
+  - 导入 `org.jetbrains.kotlin:kotlin-stdlib:1.1.1`
 
 ## 分析报告
 
 行数统计
 
-| 语言 | 文件数 | 空行数 | 注释行数 | 代码行数 |
-|:--------:|:--------:|:--------:|:--------:|:--------:|
-| Java       |  3     |  20    |  0    |  157    |
-| Groovy       |  3    |  23     |  9     |  140     |
-| Scala       |  3     |  32    |  9     |  127     |
-| Kotlin       |  3    |  23    |  9     |  136    |
+|   语言   | 文件数  | 空行数  | 注释行数 | 代码行数 |
+| :----: | :--: | :--: | :--: | :--: |
+|  Java  |  3   |  20  |  9   | 157  |
+| Groovy |  3   |  23  |  9   | 140  |
+| Scala  |  3   |  32  |  9   | 127  |
+| Kotlin |  3   |  23  |  9   | 136  |
 
 大小统计
 
-| 语言 | 不使用 Proguard (字节) |  使用 Proguard (字节) |
-|:--------:|:--------:|:--------:|
-| Java       |  1,228,376      | 772,571
-| Groovy       |  3,003,235      | 1,759,722
-| Scala       |  3,277,007      | 1,008,929
-| Kotlin       |   1,595,108     | 778,629
+|   语言   | 不使用 Proguard (字节) | 使用 Proguard (字节) |
+| :----: | :---------------: | :--------------: |
+|  Java  |     1,438,673     |     893,137      |
+| Groovy |     3,395,936     |    1,982,125     |
+| Scala  |     3,277,007     |    1,349,352     |
+| Kotlin |     1,833,258     |     903,566      |
 
 方法数量
 
-| 语言 | 不使用 Proguard |  使用 Proguard |
-|:--------:|:--------:|:--------:|
-| Java       |  163,06 | 7,065
-| Groovy       |  46,791 | 23,775
-| Scala       |  67,608 | 11,671
-| Kotlin       |   23,236 |  7,198
+|   语言   | 不使用 Proguard | 使用 Proguard |
+| :----: | :----------: | :---------: |
+|  Java  |    17,416    |    7,608    |
+| Groovy |    47,982    |   24,379    |
+| Scala  |    67,608    |   20,109    |
+| Kotlin |    23,587    |    7,656    |
 
 编译速度
 
@@ -58,12 +58,12 @@ Gradle 测试命令: `./gradlew :app:clean :app:assembleDebug`
 SBT 测试命令: `sbt app/clean app/android:package`
 
 
-| 语言 | Gradle Plugin 版本 | 耗时 (秒) | SBT | 耗时 (秒)
-|:--------:|:--------:|:--------:|:--------:|:--------:|
-| Java       |  2.1.0-rc1      | ≈ 7	| 0.13.12 | ≈ 9
-| Groovy       |  1.5.0      | ≈ 21 | 0.13.12 | -
-| Scala       |  1.3.1      | ≈ 23 | 0.13.12 | ≈ 17
-| Kotlin       |   2.1.0-rc1      | ≈ 8 | 0.13.12 | ≈ 16
+|   语言   | Gradle Plugin 版本 | 耗时 (秒) |   SBT   | 耗时 (秒) |
+| :----: | :--------------: | :----: | :-----: | :----: |
+|  Java  |      2.2.0       |  ≈ 8   | 0.13.12 |  ≈ 10  |
+| Groovy |      2.2.0       |  ≈ 20  | 0.13.12 |   -    |
+| Scala  |      1.3.1       |  ≈ 28  | 0.13.12 |  ≈ 17  |
+| Kotlin |      2.2.0       |  ≈ 9   | 0.13.12 |  ≈ 20  |
 
 ## 代码对比
 
