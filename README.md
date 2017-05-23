@@ -92,6 +92,14 @@ def title = view.findViewById(android.R.id.text1) as TextView
 
 Scala
 
+With Typed Resources enabled (include in Android SDK Plugin for SBT)
+
+```scala
+val title = view.findView(TR.text1)
+```
+
+Note: as a fallback, one can use the more traditional cast-based approach: 
+
 ```scala
 val title = view.findViewById(android.R.id.text1).asInstanceOf[TextView]
 ```

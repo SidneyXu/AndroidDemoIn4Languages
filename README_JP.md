@@ -83,6 +83,14 @@ def title = view.findViewById(android.R.id.text1) as TextView
 
 Scala
 
+Typed Resources を利用して (ほか依存は追加しない):
+
+```scala
+val title = view.findView(TR.text1)
+```
+
+メモ：普通的な文法も使える
+
 ```scala
 val title = view.findViewById(android.R.id.text1).asInstanceOf[TextView]
 ```
